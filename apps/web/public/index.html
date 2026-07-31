@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClAppOne CPA Genie</title>
+  <meta name="description" content="Secure CPA firm and client tax document workspace with AI-assisted return preparation.">
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="ClAppOne CPA Genie">
+      <img src="assets/clappone-logo.png" alt="ClAppOne">
+      <span>CPA Genie</span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#workflow">Workflow</a>
+      <a href="#documents">Documents</a>
+      <a href="#assistant">AI Assistant</a>
+      <a href="#security">Security</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+    <a class="portal-link" href="https://portal.clappone.com">Employee Portal</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CPA firm and client workspace</p>
+        <h1>ClAppOne CPA Genie</h1>
+        <p>
+          A secure subsite for CPA firms, individual CPAs, businesses, and personal tax clients to collect tax
+          documents, organize returns, connect accounting systems, and use AI-assisted review with CPA approval.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#workflow">Explore workflow</a>
+          <a class="button secondary" href="#assistant">View AI plan</a>
+        </div>
+      </div>
+
+      <aside class="workspace-preview" aria-label="CPA Genie workspace preview">
+        <div class="window-bar">
+          <span></span><span></span><span></span>
+          <strong>2026 Tax Year</strong>
+        </div>
+        <div class="preview-grid">
+          <article>
+            <small>Business return</small>
+            <strong>1120-S</strong>
+            <p>P&L, balance sheet, W-2s, 1099s, invoices</p>
+          </article>
+          <article>
+            <small>Personal return</small>
+            <strong>1040</strong>
+            <p>W-2, 1098, 1099, brokerage, donations</p>
+          </article>
+          <article>
+            <small>AI review queue</small>
+            <strong>18</strong>
+            <p>Items ready for CPA review</p>
+          </article>
+        </div>
+        <div class="assistant-card">
+          <div class="assistant-avatar">AI</div>
+          <p>Compare this year's business income by customer against last year and flag missing support.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="workflow" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Workflow</p>
+        <h2>One workspace per firm, client, entity, and tax year</h2>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="number">01</span>
+          <h3>CPA firm onboarding</h3>
+          <p>Firm admins invite preparers, reviewers, and client-facing staff with role-based access and MFA.</p>
+        </article>
+        <article class="card">
+          <span class="number">02</span>
+          <h3>Client intake</h3>
+          <p>Business and personal clients receive secure access to upload requested documents and answer intake questions.</p>
+        </article>
+        <article class="card">
+          <span class="number">03</span>
+          <h3>Return assignment</h3>
+          <p>Returns move through intake, preparation, review, client approval, filing, and final client copy delivery.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="documents" class="section split">
+      <div>
+        <p class="eyebrow">Documents</p>
+        <h2>Business and personal checklists that adapt to the return</h2>
+        <p>
+          CPA Genie separates S corp, C corp, LLC, and individual returns while still supporting connected business
+          owners who file both business and personal returns together.
+        </p>
+      </div>
+      <div class="checklist">
+        <h3>Document categories</h3>
+        <ul>
+          <li>Business returns: prior client copy, profit and loss, balance sheet, invoices, payments, W-2s, 1099s, expenses.</li>
+          <li>Personal returns: W-2s, bank statements, mortgage interest, stocks, donations, itemized expenses, other tax forms.</li>
+          <li>Final delivery: downloadable business and personal client-copy returns organized by tax year.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section integrations">
+      <div class="section-heading">
+        <p class="eyebrow">Integrations</p>
+        <h2>Ready for Zoho and QuickBooks connection flows</h2>
+      </div>
+      <div class="integration-row">
+        <article>
+          <strong>Zoho</strong>
+          <span>Pull invoices, customer income, vendor payments, and current tax-year business activity.</span>
+        </article>
+        <article>
+          <strong>QuickBooks</strong>
+          <span>Pull profit and loss, balance sheet, vendor expenses, accounts, and supporting transaction summaries.</span>
+        </article>
+        <article>
+          <strong>CPA review</strong>
+          <span>Show mapped values for approval before any AI-assisted form suggestions are accepted.</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="assistant" class="section ai-band">
+      <div>
+        <p class="eyebrow">Azure OpenAI powered</p>
+        <h2>AI document assistant with CPA approval</h2>
+        <p>
+          The assistant helps extract, summarize, compare, draft, and organize. It should not file returns by itself.
+          Every form suggestion remains reviewable and auditable before a CPA accepts it.
+        </p>
+      </div>
+      <div class="ai-panel">
+        <label for="assistantPrompt">Ask CPA Genie</label>
+        <textarea id="assistantPrompt" readonly>Find missing documents for the 2026 S corp return and compare income by customer to the prior year.</textarea>
+        <div class="ai-result">
+          <strong>Draft response</strong>
+          <p>Missing items: final W-2 packet, January bank statement, and signed shareholder basis worksheet. Income variance should be reviewed for three customers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="security" class="section split">
+      <div>
+        <p class="eyebrow">Security</p>
+        <h2>Separate product, separate data boundary</h2>
+        <p>
+          CPA Genie should use a separate Azure app, database, storage account, audit trail, and AI search index from
+          the employee portal. That keeps payroll/employee workflows and tax-client workflows cleanly isolated.
+        </p>
+      </div>
+      <div class="security-list">
+        <span>MFA for CPAs and clients</span>
+        <span>Encrypted Azure Blob Storage</span>
+        <span>Signed document download links</span>
+        <span>Tenant-isolated search indexes</span>
+        <span>Audit trail for every document</span>
+        <span>CPA approval on AI suggestions</span>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section roadmap">
+      <p class="eyebrow">Build roadmap</p>
+      <h2>Implementation phases</h2>
+      <div class="timeline">
+        <article>
+          <strong>Phase 1</strong>
+          <span>Public product site, firm/client workflow blueprint, deployment at cpa.clappone.com.</span>
+        </article>
+        <article>
+          <strong>Phase 2</strong>
+          <span>Authentication, firm onboarding, clients, returns, document upload/download, Azure Blob Storage.</span>
+        </article>
+        <article>
+          <strong>Phase 3</strong>
+          <span>Azure Document Intelligence OCR, Azure OpenAI assistant, audit logs, CPA approval workflow.</span>
+        </article>
+        <article>
+          <strong>Phase 4</strong>
+          <span>Zoho and QuickBooks integrations, return workpapers, form-generation assistance.</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; <span data-current-year></span> ClAppOne. All rights reserved.</span>
+    <span>CPA Genie is a separate ClAppOne subsite.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
