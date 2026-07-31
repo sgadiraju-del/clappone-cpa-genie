@@ -1,0 +1,16 @@
+name: Migrate CPA Genie PostgreSQL
+
+on:
+  workflow_dispatch:
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PostgreSQL client
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+      - name: Apply schema
+        env:
+          DATABASE_URL: ${{ secrets.AZURE_POSTGRES_DATABASE_URL }}
+        run: psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f infra/postgres/001_initial_schema.sql

@@ -1,0 +1,27 @@
+name: Deploy CPA Genie API
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - apps/api/**
+      - package.json
+      - .github/workflows/azure-api-app-service.yml
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm run check
+      - name: Deploy API to Azure App Service
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ vars.AZURE_API_APP_NAME }}
+          publish-profile: ${{ secrets.AZURE_API_PUBLISH_PROFILE }}
+          package: apps/api
