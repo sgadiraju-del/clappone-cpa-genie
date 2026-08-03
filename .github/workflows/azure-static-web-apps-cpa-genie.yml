@@ -1,9 +1,6 @@
 name: Deploy CPA Genie Static Web App
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
